@@ -38,7 +38,8 @@ module Mailgarage
 
     def deliver_in_development
       LetterOpener::DeliveryMethod.new(
-        message_template: 'light'
+        message_template: 'light',
+        location: Rails.root.join('tmp', 'mailgarage')
       )
       .deliver!(@mail)
     end
