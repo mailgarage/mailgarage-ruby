@@ -3,7 +3,7 @@ require "test_helper"
 module Mailgarage
   class DeliveryMethodTest < Minitest::Test
     def setup
-      stub_request(:post, "http://localhost:3001/emails")
+      stub_request(:post, "https://mailgarage.rocks/emails")
         .to_return(status: 201)
 
       @mail = Mail.new(
@@ -21,6 +21,11 @@ module Mailgarage
 
     def test_deliver_raises_in_production_with_no_api_key
       Rails.environment = 'production'
+      assert_raises(Mailgarage::Error) { Mailgarage::DeliveryMethod.new.deliver!(@mail) }
+    end
+
+    def test_deliver_raises_in_test
+      Rails.environment = 'test'
       assert_raises(Mailgarage::Error) { Mailgarage::DeliveryMethod.new.deliver!(@mail) }
     end
   end
