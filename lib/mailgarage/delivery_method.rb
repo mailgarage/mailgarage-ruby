@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Mailgarage
   class DeliveryMethod
     def initialize(options = {})
       @settings = options
-      @api_key = options[:api_key]
+      @api_key = Mailgarage.configuration.api_key
     end
 
     def deliver!(mail)
