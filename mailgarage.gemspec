@@ -4,18 +4,18 @@ Gem::Specification.new do |spec|
   spec.name          = "mailgarage"
   spec.version       = Mailgarage::VERSION
   spec.authors       = ["tim hogg"]
-  spec.email         = ["thogg4@mailgarage.rocks"]
+  spec.email         = ["tim@mailgarage.rocks"]
 
   spec.summary       = %q{The mailgarage gem helps you send emails using the mailgarage service}
   spec.homepage      = "http://mailgarage.rocks"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com"
-  spec.metadata["changelog_uri"] = "https://github.com"
+  spec.metadata["source_code_uri"] = "https://github.com/mailgarage/mailgarage-ruby"
+  spec.metadata["changelog_uri"] = "https://github.com/mailgarage/mailgarage-ruby"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
