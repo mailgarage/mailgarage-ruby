@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mailgarage (0.1.0)
+    mailgarage (0.0.1)
       letter_opener
 
 GEM

@@ -29,7 +29,7 @@ module Mailgarage
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
       request = Net::HTTP::Post.new('/emails')
-      request.body = { email: @mail.to_s }.to_json
+      request.body = { email: @mail.to_s, environment: Rails.env }.to_json
       request['Content-Type'] = 'application/json'
       request['Api-Key'] = @api_key
       http.request(request)
